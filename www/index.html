@@ -44,11 +44,15 @@
 
 <body>
     <div class="app">
-        <h1>PhoneGap</h1>
+        <h1>Circle Of Death</h1>
         <div id="deviceready" class="blink">
-            <p class="event listening">Connecting to Device</p>
-            <p class="event received">Liel's a punk!</p>
+            <p class="event listening"><em>Connecting to Device...</em></p>
+            <p class="event received">Connected!</p>
         </div>
+        <ul>
+          <button type="button" value="New Game" onclick="window.open('http://www.google.com')">New Game</button>
+          <button type="button">Close Game</button>
+        </ul>
     </div>
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
