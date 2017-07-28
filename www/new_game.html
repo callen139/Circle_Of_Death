@@ -1,11 +1,31 @@
 <!DOCTYPE html>
 <html>
   <body>
-    <form action="/num_people.js">
-      <h3>Enter number of people playing:</h3><br>
-      <input type="text" name="numpeople" value=""><br><br>
-      <input type="submit" value="Submit"><br><br>
-    </form>
-    <input type="button" onclick="location.href='index.html';" value="Back"></input>
+    <h3>Enter number of people playing:</h3>
+    <input id="num" type="text" name="numpeople" value="5">
+    <button onclick="numPeople()">Submit</button>
+    <p id="demo"></p>
+
+    <input type="button" onclick="location.href='index.html';" value="Back"></input> <!Return back to home page>
+
+    <input id="player_name" type="text" name="playersname"> <!Will make this input/function a seperate page later on>
+    <button onclick="addName()">CLICK</button>
+    <script>
+    //Function checks if enough players exist
+    function numPeople() {
+        var num;
+        num = document.getElementById("num").value;
+        playable = ((num < 15) && (num > 3)) ? "Lets play!":"Not enough/Too many players...";
+        document.getElementById("demo").innerHTML = playable;
+    }
+
+    //Only a sudo function, complete function will be finished later on
+    function addName(totalNames) {
+        var names = [];
+        var player_name = document.getElementById("player_name");
+        var name = player_name.value;
+        names.push(name);
+    }
+    </script>
   </body>
 </html>
