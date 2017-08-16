@@ -16,6 +16,7 @@ function addName() {
       player_name.value = "";
     }
     document.getElementById("pList").innerHTML = names;
+    window.sessionStorage.setItem("names", JSON.stringify(names))
 }
 
 function deleteName() {
@@ -26,4 +27,4 @@ function deleteName() {
     }
     document.getElementById("pList").innerHTML = names;
 }
-window.localStorage.setItem("names", JSON.stringify(names));
+;
