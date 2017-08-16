@@ -26,3 +26,4 @@ function deleteName() {
     }
     document.getElementById("pList").innerHTML = names;
 }
+window.localStorage.setItem("names", JSON.stringify(names));
