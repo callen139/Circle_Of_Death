@@ -9,7 +9,7 @@ function play() {
     while(currentTurn <= numberOfTurns) {
       if(iter<=names.length-1) {
         var para = document.createElement("p");                                                  // Create a <p> node
-        var t = document.createTextNode("Current Turn: "+currentTurn+ " Player Name: "+names[iter];               // Create a text node
+        var t = document.createTextNode("Current Turn: "+currentTurn+ " Player Name: "+names[iter]);               // Create a text node
         para.appendChild(t);                                                                     // Append the text to <p>
         document.getElementById("test").appendChild(para);                                       // Append <p> to <div> with id="myDIV"
         // Insert "Next Turn" button features below
