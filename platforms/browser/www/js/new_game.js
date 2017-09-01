@@ -15,7 +15,10 @@ function addName() {
       names.push(name);
       player_name.value = "";
     }
-    document.getElementById("player-list-container").innerHTML = names;
+    var new_player_name_item = document.createElement("li");
+    var new_player_name_text = document.createTextNode(name)
+    new_player_name_item.appendChild(new_player_name_text);
+    document.getElementById("player-list").appendChild(new_player_name_item);
     window.sessionStorage.setItem("names", JSON.stringify(names))
 }
 

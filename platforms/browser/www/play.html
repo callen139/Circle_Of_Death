@@ -1,15 +1,30 @@
 <!DOCTYPE html>
 <html>
   <body>
-   <p id="demo"></p>
-   <div id="test">
+   <div class="content">
+     <p id="players-list"></p>
+     <div class="current-player-turn">
+       <div id="turn-list">
 
-   </div>
-   <p id="endgame"></p>
-   <button onclick="play()">Play</button>
-   <button onclick="nextTurn()">Next Turn</button>
-   <div id="Exit">
-     <button onclick="location.href='index.html'" value="Exit Game">Exit Game</button>
+       </div>
+     </div>
+     <div class="main-window">
+       <!--TODO main window for showing cards animation and graphics--> 
+     </div>
+     <div class="end-game">
+       <p id="endgame"></p>
+     </div>
+     <div class="navigation">
+       <div class="button-play">
+         <button onclick="play()">Play</button>
+       </div>
+       <div class="button-constants">
+         <button onclick="nextTurn()">Next Turn</button>
+         <div id="Exit">
+           <button onclick="exitGame()" value="Exit Game">Exit Game</button>
+         </div>
+       </div>
+     </div>
    </div>
    <script type="text/javascript" src="js/play.js"></script>
   </body>
