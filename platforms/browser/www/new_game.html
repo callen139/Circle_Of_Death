@@ -1,21 +1,24 @@
 <!DOCTYPE html>
 <html>
   <head>
-
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
   </head>
+
   <body>
-    <h3>Enter number of people playing:</h3>
-    <input id="num" type="text" name="numpeople" value="5">
-    <button onclick="numPeople()">Check</button>
-    <p id="checkP"></p>
+    <div class="content">
+      <div class="add-player-bar">
+        <input id="player_name" type="text" name="playersname"> <!--Will make this input/function a seperate page later on-->
+        <button onclick="addName()">Add</button>
+      </div>
 
-    <input id="player_name" type="text" name="playersname"> <!--Will make this input/function a seperate page later on-->
-    <button onclick="addName()">Add</button>
-    <button onclick="deleteName()">Delete</button>
+      <div id="player-list-container"></div>
 
-    <p id="pList"></p>
-    <input type="button" onclick="location.href='index.html';" value="Exit To Home Page"></input> <!--Return back to home page and lose all progress for name list-->
-    <input type="button" onclick="location.href='play.html';" value="Play"></input>
+      <div class="navigation-bar">
+        <input type="button" onclick="location.href='index.html';" value="Exit To Home Page"></input> <!--Return back to home page and lose all progress for name list-->
+        <input type="button" onclick="location.href='play.html';" value="Play"></input>
+      </div>
+    </div>
+    <script type="text/javascript" src="js/new_game.js" />
   </body>
-  <script type="text/javascript" src="js/new_game.js"></script>
+
 </html>

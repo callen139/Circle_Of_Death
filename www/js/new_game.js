@@ -15,7 +15,7 @@ function addName() {
       names.push(name);
       player_name.value = "";
     }
-    document.getElementById("pList").innerHTML = names;
+    document.getElementById("player-list-container").innerHTML = names;
     window.sessionStorage.setItem("names", JSON.stringify(names))
 }
 
