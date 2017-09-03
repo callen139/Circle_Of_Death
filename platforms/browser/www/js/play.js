@@ -15,7 +15,7 @@ function play() {
         // Insert "Next Turn" button features below
         // "Play" button should disappear and "Next Turn" button should appear
         // When game is over, "Play" button should reappear and "Next Turn" should disappear
-
+        
 
         currentTurn++;
         iter++;

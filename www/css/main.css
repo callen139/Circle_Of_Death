@@ -51,7 +51,7 @@ body {
     }
 }
 
-.content {
+.content, .rules {
     position: absolute;
     left: 50%;
     top: 50%;
@@ -60,4 +60,8 @@ body {
     text-align:center;
     padding:180px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) */
     margin:-115px 0px 0px -112px;
+}
+
+div.button-play {
+  /* display: none; */
 }
