@@ -9,13 +9,14 @@ function play() {
     while(currentTurn <= numberOfTurns) {
       if(iter<=names.length-1) {
         var para = document.createElement("p");                                                  // Create a <p> node
-        var t = document.createTextNode("Current Turn: "+currentTurn+ " Player Name: "+names[iter]);               // Create a text node
+        var t = document.createTextNode("Current Turn: "+currentTurn+ " Player Name: "+names[iter]);        // Create a text node
         para.appendChild(t);                                                                     // Append the text to <p>
-        document.getElementById("turn-list").appendChild(para);                                       // Append <p> to <div> with id="myDIV"
+        document.getElementById("turn-list").appendChild(para);                                  // Append <p> to <div> with id="myDIV"
+        //*** nextTurn(iter); ***
+                                            
         // Insert "Next Turn" button features below
         // "Play" button should disappear and "Next Turn" button should appear
         // When game is over, "Play" button should reappear and "Next Turn" should disappear
-        
 
         currentTurn++;
         iter++;
@@ -25,6 +26,13 @@ function play() {
       }
     }
     document.getElementById("endgame").innerHTML = names[iter-1] + " YOU LOST!";
+}
+
+function nextTurn(iter) {
+    var para = document.createElement("p");                                                  // Create a <p> node
+    var t = document.createTextNode("Current Turn: "+currentTurn+ " Player Name: "+names[iter]);        // Create a text node
+    para.appendChild(t);                                                                     // Append the text to <p>
+    document.getElementById("turn-list").appendChild(para);                                  // Append <p> to <div> with id="myDIV"
 }
 
 function exitGame() {
