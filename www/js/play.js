@@ -7,23 +7,30 @@ function play() {
     var currentTurn = 1;
     var iter = 0;
     var currentGameData = {}; // { currentTurn | playerName | randomCard }
+    var usedCards = [];
 
+    // Insert "Next Turn" button features
+    // "Play" button should disappear and "Next Turn" button should appear
+    // When game is over, "Play" button should reappear and "Next Turn" should disappear
     while(currentTurn <= numberOfTurns) {
       if(iter<=names.length-1) {
-        var randomCardNumber = Math.floor(Math.random() * (52-1) + 1); //Randomly picks a number between 1-52
-        var randomCard = assignCard(randomCardNumber);
-        // Create list of turns, show currentTurn and playerName
-        var para = document.createElement("p");
-        var t = document.createTextNode("Current Turn: "+currentTurn+ " Player Name: "+names[iter]+" Card: "+randomCard);
-        para.appendChild(t);
-        document.getElementById("turn-list").appendChild(para);
+        var randomCardNumber = generateRandomCardNum();
 
-        // Insert "Next Turn" button features
-        // "Play" button should disappear and "Next Turn" button should appear
-        // When game is over, "Play" button should reappear and "Next Turn" should disappear
+        // Used cards logic seems to work fine. Had a rare case where two players had
+        //  the same card after a single turn. Only happened once so not sure what was wrong
+        if(checkCard(usedCards, randomCardNumber)) {
+          var randomCard = assignCard(randomCardNumber);
 
-        currentTurn++;
-        iter++;
+          // Create list of turns, show currentTurn and playerName
+          var para = document.createElement("p");
+          var t = document.createTextNode("Current Turn: "+currentTurn+ " Player Name: "+names[iter]+" Card: "+randomCard);
+          para.appendChild(t);
+          document.getElementById("turn-list").appendChild(para);
+
+          usedCards.push(randomCardNumber);
+          currentTurn++;
+          iter++;
+        }
       }
       else
         iter = 0;
@@ -53,9 +60,20 @@ function assignCard(rcn) { //rcn = random card number
       card += ",King";
     if(tempNum <= 10 && tempNum !== 0)
       card += ","+tempNum.toString();
-return card;
+    return card;
 }
 
+function generateRandomCardNum() {
+    return Math.floor(Math.random() * (52-1) + 1); //Randomly picks a number between 1-52
+}
+
+function checkCard(usedCards, num) {
+    for(var x = 0; x < usedCards.length-1; x++) { // Checking if a card has already been used
+      if(usedCards[x] == num)
+        return false; // Card has been played
+    }
+    return true; // Card has NOT been played
+}
 
 function exitGame() {
     clearStorage();
