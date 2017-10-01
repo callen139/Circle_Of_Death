@@ -41,6 +41,11 @@ function nextTurn() {
     var crd = currentGameData[clicks].card;
   
     // Create list of turns, show currentTurn and playerName
+    // TODO -- Create a way to display the selected card PNG
+    //  When displaying turn info, only show current, not the whole list
+    // How the UI should look:              
+    //                                  Turn Info
+    //                                  Card PNG
     var para = document.createElement("p");
     var t = document.createTextNode("Current Turn: "+ trn + " Player Name: "+ nm +" Card: "+ crd);
     para.appendChild(t);
