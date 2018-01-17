@@ -84,13 +84,13 @@ function assignCard(rcn) { //rcn = random card number
 // Deciding the value of the card
     var tempNum = rcn % 13;
   if(tempNum == 11)
-    card += ",Jack";
+    card += ", Jack";
   if(tempNum == 12)
-    card += ",Queen";
+    card += ", Queen";
   if(tempNum == 0)
-    card += ",King";
+    card += ", King";
   if(tempNum <= 10 && tempNum !== 0)
-    card += ","+tempNum.toString();
+    card += ", "+tempNum.toString();
   return card;
 }
 
