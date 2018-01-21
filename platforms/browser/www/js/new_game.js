@@ -7,19 +7,22 @@ function numPeople() {
     document.getElementById("checkP").innerHTML = playable;
 }
 
-//Only a sudo function, complete function will be finished later on
+//Only a pseudo function, complete function will be finished later on
 function addName() {
     var player_name = document.getElementById("player_name");
     var name = player_name.value;
-    if(name != "") {
+    if(name !== "") {
       names.push(name);
       player_name.value = "";
+      var new_player_name_item = document.createElement("li");
+      var new_player_name_text = document.createTextNode(name);
+      new_player_name_item.appendChild(new_player_name_text);
+      document.getElementById("player-list").appendChild(new_player_name_item);
+      window.sessionStorage.setItem("names", JSON.stringify(names));
     }
-    var new_player_name_item = document.createElement("li");
-    var new_player_name_text = document.createTextNode(name)
-    new_player_name_item.appendChild(new_player_name_text);
-    document.getElementById("player-list").appendChild(new_player_name_item);
-    window.sessionStorage.setItem("names", JSON.stringify(names))
+    else {
+        alert("Please enter a valid name.");
+    }
 }
 
 function deleteName() {
@@ -30,4 +33,3 @@ function deleteName() {
     }
     document.getElementById("pList").innerHTML = names;
 }
-;
