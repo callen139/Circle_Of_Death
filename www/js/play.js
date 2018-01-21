@@ -7,14 +7,29 @@ function getDeck() {
   
   for(var x = 0; x < suits.length; x++) {
     for(var y = 0; y < cards.length; y++) {
-      var card = {Value: cards[y], Suit: suits[x]}
+      var card = {Value: cards[y], Suit: suits[x]};
       deck.push(card);
     }
   }
   return deck;
 }
 
+function renderDeck() {
+  for(var r = 0; r < deck.length; r++) {
+    var card = document.createElement("div");
+    var value = document.createElement("div");
+    var suit = document.createElement("div");
+    card.className = "card";
+    value.className = "value";
+    suit.className = "suit" + deck[i].Suit;
 
+    value.innerHTML = deck[i].Value;
+    card.appendChild(value);
+    card.appendChild(suit);
+
+    document.getElementById("deck").appendChild(card);
+  }
+}
 
 
 
