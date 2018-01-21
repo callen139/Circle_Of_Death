@@ -1,3 +1,30 @@
+var cards = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
+var suits = ["Diamonds", "Hearts", "Spades", "Clubs"];
+var deck = new Array();
+
+function getDeck() {
+  var deck = new Array();
+  
+  for(var x = 0; x < suits.length; x++) {
+    for(var y = 0; y < cards.length; y++) {
+      var card = {Value: cards[y], Suit: suits[x]}
+      deck.push(card);
+    }
+  }
+  return deck;
+}
+
+
+
+
+
+
+
+
+//---------------------------------------------------------------------------------------
+//=================================== play.js ===========================================
+//---------------------------------------------------------------------------------------
+
 var names = JSON.parse(window.sessionStorage.getItem("names"));
 var currentGameData = []; // { currentTurn | playerName | randomCard }
 var usedCards = [];
@@ -84,13 +111,13 @@ function assignCard(rcn) { //rcn = random card number
 // Deciding the value of the card
     var tempNum = rcn % 13;
   if(tempNum == 11)
-    card += ",Jack";
+    card += ", Jack";
   if(tempNum == 12)
-    card += ",Queen";
+    card += ", Queen";
   if(tempNum == 0)
-    card += ",King";
+    card += ", King";
   if(tempNum <= 10 && tempNum !== 0)
-    card += ","+tempNum.toString();
+    card += ", "+tempNum.toString();
   return card;
 }
 

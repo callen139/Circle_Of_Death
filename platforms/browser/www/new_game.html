@@ -7,8 +7,9 @@
   <body>
     <div class="content">
       <div class="add-player-bar">
-        <input id="player_name" type="text" name="playersname"> <!--Will make this input/function a seperate page later on-->
-        <button onclick="addName()">Add</button>
+        <label for="player_name">Enter Each Player's Name and Click Add</label>
+        <input id="player_name" type="text" Placeholder="Player's Name" name="playersname" /> <!--Will make this input/function a seperate page later on-->
+        <input type="button" onclick="addName()" value="Add" />
       </div>
 
       <div id="player-list-container">
@@ -17,8 +18,8 @@
       </div>
 
       <div class="navigation-bar">
-        <input type="button" onclick="location.href='index.html';" value="Exit To Home Page"></input> <!--Return back to home page and lose all progress for name list-->
-        <input type="button" onclick="location.href='play.html';" value="Play"></input>
+        <input type="button" onclick="location.href='index.html';" value="Exit To Home Page" /> <!--Return back to home page and lose all progress for name list-->
+        <input type="button" onclick="location.href='play.html';" value="Play" />
       </div>
     </div>
     <script type="text/javascript" src="js/new_game.js"></script>
