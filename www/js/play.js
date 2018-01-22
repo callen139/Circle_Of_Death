@@ -31,7 +31,10 @@ function renderDeck() {
   }
 }
 
-
+function load() {
+  deck = getDeck();
+  renderDeck();
+}
 
 
 
