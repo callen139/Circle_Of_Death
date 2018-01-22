@@ -35,7 +35,7 @@ function load() {
   deck = getDeck();
   renderDeck();
 }
-
+windows.onload = load;
 
 
 
