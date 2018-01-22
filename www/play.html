@@ -2,6 +2,7 @@
 <html>
   <head>
     <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <link rel="stylesheet" type="text/css" href="css/card.css" />
   </head>
 
   <body>
@@ -13,7 +14,8 @@
        </div>
      </div>
      <div class="main-window">
-       <!--TODO main window for showing cards animation and graphics-->
+       <!--TODO main window for showing cards animation and graphics -->
+       <div id="deck"></div> <!-- card deck graphics -->
      </div>
      <div class="end-game">
        <p id="endgame"></p>
@@ -24,7 +26,7 @@
        </div>
        <div class="button-constants">
          <div class="next-turn">
-            <button onclick="nextTurn()" value="Next Turn">Next Turn</button>
+            <button id="next-turn" onclick="nextTurn()" value="Next Turn">Next Turn</button>
          </div>
          <div class="Exit">
            <button onclick="exitGame()" value="Exit Game">Exit Game</button>

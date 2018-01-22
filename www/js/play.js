@@ -1,5 +1,5 @@
 var cards = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
-var suits = ["Diamonds", "Hearts", "Spades", "Clubs"];
+var suits = ["diamonds", "hearts", "spades", "clubs"];
 var deck = new Array();
 
 function getDeck() {
@@ -21,7 +21,7 @@ function renderDeck() {
     var suit = document.createElement("div");
     card.className = "card";
     value.className = "value";
-    suit.className = "suit" + deck[i].Suit;
+    suit.className = "suit " + deck[i].Suit;
 
     value.innerHTML = deck[i].Value;
     card.appendChild(value);
@@ -35,7 +35,7 @@ function load() {
   deck = getDeck();
   renderDeck();
 }
-windows.onload = load;
+document.getElementById("next-turn").onclick(load);
 
 
 

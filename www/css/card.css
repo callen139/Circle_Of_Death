@@ -23,15 +23,15 @@
     width: 90px;
 }
 
-.card .Diamonds {
+.card .diamonds {
     background-position-y: 100px;
 }
 
-.card .Hearts {
+.card .hearts {
     background-position-x: 90px;
 }
 
-.card .Clubs {
+.card .clubs {
     background-position-x: 90px;
     background-position-y: 100px;
 }
